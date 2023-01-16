@@ -1,0 +1,18 @@
+<div class="margin-1 cardFormat">
+  <h2 class="marginLeft-2">NBA Score Tracking App</h2>
+  <h3 class="marginLeft-2">&nbsp;{{teamName}} &nbsp;[{{teamAbbreviation}}]</h3>
+  <div class="subheader ">{{teamConference}} conference</div>
+
+  <ng-container *ngFor="let team of teamTrackData">
+    <div class="width-100 clear-left margin-1">
+      <div class="child bold width-3 bb">{{team.home_team.abbreviation}}</div>
+      <div class="child paddingleft-1 width-3">{{team.home_team_score}}</div>
+      <div class="child paddingleft-1 width-3"> -</div>
+      <div class="child paddingleft-1">{{team.visitor_team_score}}</div>
+      <div class="child bold paddingleft-1">{{team.visitor_team.abbreviation}}</div>
+    </div>
+
+  </ng-container>
+  <br/><br/>
+  <button routerLink="/" class="btnDecor text-center">&lt;&lt; Back to All Team Stats</button>
+</div>

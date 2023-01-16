@@ -1,0 +1,43 @@
+<article [id]="abbreviation" class="cardFormat ">
+  <div class="Parent">
+    <div class="child width-100 bb">
+      <div class="mainHeader">{{teamName}} [{{abbreviation | uppercase}}]
+        <div class="positionRight" title="Remove Team Card" (click)="delete()" id="remove{{abbreviation | uppercase}}">X</div></div>
+      <div class="subheader">{{conference}} conference</div>
+    </div>
+  </div>
+
+  <div class="Parent">
+    <div class="resultStart">
+      Results of the past 12 days
+    </div>
+    <div class="resultStart">
+      <div class="resultWinsLosses bb ">
+        <ng-container *ngFor="let outcome of outcomeChecker">
+          <div class="{{outcome}}">{{outcome}}</div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="parentFlex">
+      <div class="child width-50">
+
+        <div class="resultAverage bb ">
+          Avg pts scored: <span class="bold">&nbsp;{{averagePointsScored}}</span>
+        </div>
+
+        <div class="resultAverage bb ">
+          Avg pts conceded: <span class="bold">&nbsp; {{averagePointsConceded}}</span>
+        </div>
+
+        <div class="resultAverage bb ">
+          <button routerLink="result/{{teamId}}" class="btnDecor" id="results{{abbreviation | uppercase}}">See game results</button>
+        </div>
+      </div>
+      <div class="child width-50 ">
+        <img src="https://interstate21.com/nba-logos/{{abbreviation}}.png"
+             class="imgfit floatRight marginBottom-2" alt=""/>
+      </div>
+    </div>
+  </div>
+</article>
+

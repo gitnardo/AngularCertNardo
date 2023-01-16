@@ -1,0 +1,22 @@
+<div class="margin-1 ">
+<h2>NBA Score Tracking App</h2>
+
+<div class="">
+  <mat-label>Team:</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-select #teamInput id="teamInput">
+      <mat-option *ngFor="let team of teamsList" (click)="showTeamDetail(team.id)" [value]="team.id">
+        {{team.full_name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button id="trackBtn" class="btnDecor marginLeft-1" (click)="AddTeamCard()" [disabled]="trackTeamButton">Track Team
+  </button>
+
+</div>
+
+<section #cardContainer class="cards-container  ">
+  <ng-template appCardLoader=""></ng-template>
+</section>
+</div>
